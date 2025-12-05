@@ -7,13 +7,19 @@ GET {{url}}/api/v1/events
 ### test get event by eventID
 GET {{url}}/api/v1/events/1
 
+###test get event by eventID if eventID is not found
+GET {{url}}/api/v1/events/99
+
 
 
 ###get all menu items
 GET {{url}}/api/v1/menu
 
-### test /menu-item/:number
-GET {{url}}/api/v1/menu/1
+### test /menu-item/:number if number is found
+GET {{url}}/api/v1/menu/5
+
+### test /menu-item/:number if number is not found
+GET {{url}}/api/v1/menu/6
 
 
 

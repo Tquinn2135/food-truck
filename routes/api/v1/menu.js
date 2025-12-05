@@ -17,8 +17,9 @@ menuRouter.get('/api/v1/menu', async (req, res) => {
 menuRouter.get('/api/v1/menu/:number', async (req, res) => {
     const { number } = req.params    
     const collection = await getCollection('FoodTruck', 'Menu')
-    const menuItem = await collection.findOne({ number: parseInt(number) })
-    res.json(menuItem)
+    const found = await collection.findOne({ number: parseInt(number) })
+    if(found) res.json(found)
+     else res.send({error: `Menu item not found: ${number}`})
 })
 
 //add a new menu item
