@@ -1,0 +1,19 @@
+###variables
+@url = http://localhost:3000
+
+### test get all events
+GET {{url}}/api/v1/events
+
+### test get event by eventID
+GET {{url}}/api/v1/events/1
+
+
+
+###get all menu items
+GET {{url}}/api/v1/menu
+
+### test /menu-item/:number
+GET {{url}}/api/v1/menu/1
+
+
+
