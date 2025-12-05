@@ -3,7 +3,7 @@ const menuRouter = require('express').Router()
 const { getCollection } = require('../../../dbconnect')
 
 //gett all menu items
-menuRouter.get('/api/v1/menu', async (req, res) => {
+menuRouter.get('/', async (req, res) => {
     const collection = await getCollection('FoodTruck', 'Menu')
     const menuItems = await collection.find({}).toArray()
      const item = menuItems.map(items => {
@@ -14,7 +14,7 @@ menuRouter.get('/api/v1/menu', async (req, res) => {
 })
 
 //get menu item by number
-menuRouter.get('/api/v1/menu/:number', async (req, res) => {
+menuRouter.get('/:number', async (req, res) => {
     const { number } = req.params    
     const collection = await getCollection('FoodTruck', 'Menu')
     const found = await collection.findOne({ number: parseInt(number) })
@@ -23,7 +23,7 @@ menuRouter.get('/api/v1/menu/:number', async (req, res) => {
 })
 
 //add a new menu item
-menuRouter.post('/menu', async (req, res) => {
+menuRouter.post('/', async (req, res) => {
          
 })
 

@@ -5,9 +5,10 @@ const port = 3000
 app.use(express.json())
 
 app.use(express.static('public'))
+app.use(require('./routes/static'))
 
-app.use(require('./routes/api/v1/menu'))
-app.use(require('./routes/api/v1/events'))
+app.use('/api/v1/menu', require('./routes/api/v1/menu'))
+app.use('/api/v1/events', require('./routes/api/v1/events'))
 
 // app.get('/', (req, res) => {
 //    res.sendFile('index.html', { root })
