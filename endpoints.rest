@@ -1,11 +1,13 @@
 ###variables
 @url = http://localhost:3020/api/v1
 
+@id = 692e503fba7443a084616da5
+
 ### get all events
 GET {{url}}/events
 
 ### get event by eventID
-GET {{url}}/events/1
+GET {{url}}/events/{{id}}
 
 ### get event by eventID if eventID is not found
 GET {{url}}/events/6
@@ -40,8 +42,7 @@ Content-Type: application/json
 
 {    
     "name": "Open Air",
-    "location": "A delicious vegan burger with lettuce, tomato, and our special sauce.",
+    "location": "Maywood Park, 187 W Diversy St, Chicago, IL 60007",
     "date": "2025-07-31",
-    "time": "8:00 AM - 11:59 PM",
-    "eventID": 3   
+    "time": "8:00 AM - 11:59 PM"
 }
