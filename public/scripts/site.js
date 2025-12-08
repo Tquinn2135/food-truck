@@ -20,7 +20,6 @@
         </div>
       `)
       .join('')
-
     
     const eventRes = await fetch('/api/v1/events')
     const eventData = await eventRes.json()
