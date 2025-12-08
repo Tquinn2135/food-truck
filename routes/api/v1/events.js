@@ -5,12 +5,8 @@ const { getCollection } = require('../../../dbconnect')
 //get all events
 eventRouter.get('/', async (req, res) => {
     const collection = await getCollection('FoodTruck', 'Events')
-    const eventLocations = await collection.find({}).toArray()
-    const events = eventLocations.map(event => {
-        const { name, date, location, time } = event
-        return { name, date, location, time }
-    })
-    res.json(events)
+    const found = await collection.find({}).toArray()
+    res.send(found)
 })
 
 //get event by eventID
@@ -21,5 +17,7 @@ eventRouter.get('/:eventID', async (req, res) => {
     if(found) res.json(found)
      else res.send({error: `Event not found: ${eventID}`})
 })
+
+//add a new event
 
 module.exports = eventRouter

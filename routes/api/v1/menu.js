@@ -5,12 +5,16 @@ const { getCollection } = require('../../../dbconnect')
 //gett all menu items
 menuRouter.get('/', async (req, res) => {
     const collection = await getCollection('FoodTruck', 'Menu')
-    const menuItems = await collection.find({}).toArray()
-     const item = menuItems.map(items => {
-          const { number, description, name, price, image } = items
-          return { number, description, name, price, image }
-    })
-    res.json(item)
+    const found = await collection.find({}).toArray()
+    res.send(found)    
+})
+
+//add a new menu item
+menuRouter.post('/add', async (req, res) => {
+    const { number, description, name, price, image } = req.body
+    const collection = await getCollection('FoodTruck', 'Menu')
+    const { acknowledged, insertedId } = await collection.insertOne({ number, description, name, price, image })
+    res.send({ acknowledged, insertedId })
 })
 
 //get menu item by number
@@ -22,9 +26,6 @@ menuRouter.get('/:number', async (req, res) => {
      else res.send({error: `Menu item not found: ${number}`})
 })
 
-//add a new menu item
-menuRouter.post('/', async (req, res) => {
-         
-})
+
 
 module.exports = menuRouter

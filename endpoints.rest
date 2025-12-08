@@ -1,5 +1,5 @@
 ###variables
-@url = http://localhost:3000/api/v1
+@url = http://localhost:3020/api/v1
 
 ### test get all events
 GET {{url}}/events
@@ -21,5 +21,15 @@ GET {{url}}/menu/5
 ### test /menu-item/:number if number is not found
 GET {{url}}/menu/6
 
+###  add a new menu item
+POST {{url}}/menu/add
+Content-Type: application/json
 
+{
+    "number": 6,
+    "description": "A delicious vegan burger with lettuce, tomato, and our special sauce.",
+    "name": "Vegan Burger",
+    "price": 8.99,
+    "image": ""
+}
 
