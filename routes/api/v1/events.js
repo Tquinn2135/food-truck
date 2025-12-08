@@ -9,6 +9,15 @@ eventRouter.get('/', async (req, res) => {
     res.send(found)
 })
 
+//add a new event
+eventRouter.post('/add', async (req, res) => {
+    const { name, location, date, time, eventID } = req.body
+    const collection = await getCollection('FoodTruck', 'Events')
+    const { acknowledged } = await collection.insertOne({ name, location, date, time, eventID })
+    res.send({ acknowledged })
+})
+
+
 //get event by eventID
 eventRouter.get('/:eventID', async (req, res) => {
     const { eventID } = req.params    
@@ -18,6 +27,5 @@ eventRouter.get('/:eventID', async (req, res) => {
      else res.send({error: `Event not found: ${eventID}`})
 })
 
-//add a new event
 
 module.exports = eventRouter
