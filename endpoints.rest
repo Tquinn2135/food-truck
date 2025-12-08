@@ -1,13 +1,13 @@
 ###variables
 @url = http://localhost:3020/api/v1
 
-### test get all events
+### get all events
 GET {{url}}/events
 
-### test get event by eventID
+### get event by eventID
 GET {{url}}/events/1
 
-###test get event by eventID if eventID is not found
+### get event by eventID if eventID is not found
 GET {{url}}/events/6
 
 
@@ -19,7 +19,7 @@ GET {{url}}/menu
 GET {{url}}/menu/5
 
 ### test /menu-item/:number if number is not found
-GET {{url}}/menu/6
+GET {{url}}/menu/7
 
 ###  add a new menu item
 POST {{url}}/menu/add
@@ -33,3 +33,15 @@ Content-Type: application/json
     "image": ""
 }
 
+
+###  add a new menu item
+POST {{url}}/events/add
+Content-Type: application/json
+
+{    
+    "name": "Open Air",
+    "location": "A delicious vegan burger with lettuce, tomato, and our special sauce.",
+    "date": "2025-07-31",
+    "time": "8:00 AM - 11:59 PM",
+    "eventID": 3   
+}
