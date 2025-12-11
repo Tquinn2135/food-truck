@@ -8,10 +8,10 @@
 ### get all events
 GET {{url}}/events
 
-### get event by eventID
+### get event by ID
 GET {{url}}/events/{{id}}
 
-### get event by eventID if eventID is not found
+### get event by ID if eventID is not found
 GET {{url}}/events/6
 
 
@@ -38,13 +38,14 @@ Content-Type: application/json
 }
 
 
-###  add a new menu item
+###  add a new event
 POST {{url}}/events/add
 Content-Type: application/json
 
 {    
-    "name": "Open Air",
-    "location": "Maywood Park, 187 W Diversy St, Chicago, IL 60007",
-    "date": "2025-07-31",
-    "time": "8:00 AM - 11:59 PM"
+    "name": "Riotfest",
+    "location": "555 Barton Springs Road, South Austin, TX 78704",
+    "date": "2025-08-25",
+    "time": "9:00 AM - 11:59 PM"
 }
+

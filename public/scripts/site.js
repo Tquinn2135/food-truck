@@ -14,7 +14,7 @@
       .map(item => `
         <div class="menu-item">
           <h4>${item.name}</h4>
-          <img src="${item.imageUrl}" width="150" />
+          <img src="${item.image}" width="150" />
           <p>${item.description}</p>
           <strong>$${item.price}</strong>
         </div>
