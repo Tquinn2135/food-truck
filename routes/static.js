@@ -17,4 +17,9 @@ router.get('/events', (req, res) => {
      res.sendFile('index.html', { root })
 })
 
+//temporary route for event
+// router.get('/event/:id', (req, res) => {
+//      res.sendFile('index.html', { root })
+// })
+
 module.exports = router
