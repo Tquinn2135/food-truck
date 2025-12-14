@@ -22,4 +22,8 @@ router.get('/event/:id', (req, res) => {
      res.sendFile('index.html', { root })
 })
 
+router.get('/menu/:number', (req, res) => {
+     res.sendFile('index.html', { root })
+})
+
 module.exports = router

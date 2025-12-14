@@ -10,3 +10,51 @@ body{
     color: #333;
     background-color: #f8f9fa;
 }
+
+.menu-item {
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #fff;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+    text-decoration: underline;
+}
+
+h2{
+    margin: 10px;
+    text-align: center;
+}
+
+h4 {
+    margin: 10px;
+}
+
+div #truckLocation {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#events {
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-item-image {
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+p {
+    margin: 10px;
+    text-align: center;
+}

@@ -13,7 +13,11 @@
     menuItems.innerHTML = menuData
       .map(item => `
         <div class="menu-item">
-          <h4>${item.name}</h4>
+          <h4>
+          <a href="/menu/${item.number}">#${item.number}.
+          ${item.name}
+          </a>
+          </h4>
           <img src="${item.image}" width="150" />
           <p>${item.description}</p>
           <strong>$${item.price}</strong>
@@ -47,6 +51,22 @@
       <p><strong>Location:</strong> ${event.location}</p>
       <p><strong>Date:</strong> ${event.date}</p>
       <p><strong>Time:</strong> ${event.time}</p>
+    `
+  }
+
+
+  //Tom
+  if(firstSegment === 'menu' && id) {
+    const res = await fetch(`/api/v1/menu/${id}`)
+    const item = await res.json()
+
+    document.getElementById('locations').innerText = `Menu Item #${item.number}`
+    document.getElementById('menuLabel').innerText = `${item.name}`
+
+    menuItems.innerHTML = `    
+    <img src="${item.image}" width="300" class="menu-item-image"/>
+    <p>${item.description}</p>
+    <p>$${item.price}</p>
     `
   }
 })()

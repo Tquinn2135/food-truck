@@ -3,7 +3,7 @@ const path = require('path')
 const menuRouter = require('express').Router()
 const { getCollection } = require('../../../dbconnect')
 
-//gett all menu items
+//get all menu items
 menuRouter.get('/', async (req, res) => {
     const collection = await getCollection('FoodTruck', 'Menu')
     const found = await collection.find({}).toArray()
