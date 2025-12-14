@@ -19,7 +19,6 @@ eventRouter.post('/add', async (req, res) => {
 })
 
 
-
 //get event by eventID
 eventRouter.get('/:id', async (req, res) => {
     const { id } = req.params
